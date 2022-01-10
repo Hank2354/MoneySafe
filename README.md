@@ -3,6 +3,15 @@
 # :money_with_wings: MoneySafe :money_with_wings:
 Application for tracking income and expenses and analyzing expenses
 
+- [About project](#About-project)
+    - [Main block](#Main-block)
+    - [Analytics block](#Analytics-block)
+    - [All transactions block](#All-transactions-block)
+    - [Settings block](#Settings-block)
+- [Project Structure](#Project-Structure)
+- [Getting started](#Getting-started)
+- [Presentation](#Presentation)
+
 ## About project :warning:
 
 This pet-project aims to help control expenses by setting the necessary budgets for categories.
@@ -12,6 +21,7 @@ In order to achieve maximum efficiency, it is necessary that the process of ente
 Minimalistic style, and intuitive interface help you quickly get used to and make all transactions in the application in a short time
 
 ### Main block
+ 
 There are two buttons on the main screen for quickly adding income or expense. The user will perform these operations frequently, so the buttons are hard to miss.
 
 Also, from this screen we can go to one of the main modules
