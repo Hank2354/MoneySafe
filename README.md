@@ -5,7 +5,7 @@ Application for tracking income and expenses and analyzing expenses
 
 - [About project](#About-project)
     - [Main block](#Main-block)
-    - [Analytics block](#Analytics-block-:bar_chart:)
+    - [Analytics block](#Analytics-block-bar_chart)
     - [All transactions block](#All-transactions-block)
     - [Settings block](#Settings-block)
 - [Project Structure](#Project-Structure)
