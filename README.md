@@ -3,14 +3,14 @@
 # :money_with_wings: MoneySafe :money_with_wings:
 Application for tracking income and expenses and analyzing expenses
 
-- [About project](#About-project)
+- [About project](#About-project-warning)
     - [Main block](#Main-block)
     - [Analytics block](#Analytics-block-bar_chart)
-    - [All transactions block](#All-transactions-block)
-    - [Settings block](#Settings-block)
-- [Project Structure](#Project-Structure)
-- [Getting started](#Getting-started)
-- [Presentation](#Presentation)
+    - [All transactions block](#All-transactions-block-clipboard)
+    - [Settings block](#Settings-block-construction)
+- [Project Structure](#Project-Structure-bookmark_tabs)
+- [Getting started](#Getting-started-rocket)
+- [Presentation](#Presentation-iphone)
 
 ## About project :warning:
 
