@@ -1,0 +1,22 @@
+PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - MultiProgressView (1.3.0)
+
+DEPENDENCIES:
+  - Charts
+  - MultiProgressView
+
+SPEC REPOS:
+  trunk:
+    - Charts
+    - MultiProgressView
+
+SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  MultiProgressView: 65e5bb8181687099ade56d16d85d245a92fafa96
+
+PODFILE CHECKSUM: b1873cc0acd660fb4729d43f7a3b96a0873bb573
+
+COCOAPODS: 1.11.2

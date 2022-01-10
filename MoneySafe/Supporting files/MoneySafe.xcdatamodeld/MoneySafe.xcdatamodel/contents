@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21A559" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="BudgetUnit" representedClassName="BudgetUnit" syncable="YES">
+        <attribute name="budget" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="categoryID" optional="YES" attributeType="String"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSettings" inverseName="budgetUnits" inverseEntity="UserSettings"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="categoryID" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="detail" optional="YES" attributeType="String"/>
+        <relationship name="wallet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wallet" inverseName="transactions" inverseEntity="Wallet"/>
+    </entity>
+    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES">
+        <attribute name="expenseCategoriesID" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <attribute name="incomeCategoriesID" optional="YES" attributeType="Transformable" customClassName="[String]"/>
+        <relationship name="budgetUnits" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="BudgetUnit" inverseName="user" inverseEntity="BudgetUnit"/>
+        <relationship name="wallets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Wallet" inverseName="user" inverseEntity="Wallet"/>
+    </entity>
+    <entity name="Wallet" representedClassName="Wallet" syncable="YES">
+        <attribute name="balance" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="isActive" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="walletName" optional="YES" attributeType="String"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="wallet" inverseEntity="Transaction"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSettings" inverseName="wallets" inverseEntity="UserSettings"/>
+    </entity>
+    <elements>
+        <element name="UserSettings" positionX="-232.5703735351562" positionY="184.7946319580078" width="143.7327270507812" height="103"/>
+        <element name="Wallet" positionX="-39.9185791015625" positionY="144.1253967285156" width="128" height="118"/>
+        <element name="BudgetUnit" positionX="-441.266845703125" positionY="155.2388305664062" width="128" height="73"/>
+        <element name="Transaction" positionX="134.5305786132812" positionY="99.56167602539062" width="128" height="103"/>
+    </elements>
+</model>
