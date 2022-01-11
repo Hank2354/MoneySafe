@@ -136,16 +136,15 @@ class MainInteractor: MainInteractorType {
                 for budgetUnit in budgetUnits {
                     
                     let categoryID = budgetUnit.categoryID
-                    var category: GeneralCategoryModel!
+                    var category: GeneralCategoryModel?
                     var spentMoney: Decimal = 0
                     
                     guard let categoryID = categoryID else { return .failure(Errors.loadUserBudgetsError) }
                     
-                    for expenseCaregory in expenseCaregories {
-                        if expenseCaregory.categoryID == categoryID {
-                            category = expenseCaregory
-                        }
-                    }
+                    category = getCategoryFromID(id: categoryID)
+                    
+                    guard let category = category else { return .failure(.loadTransactionsError) }
+
                     
                     for transaction in transactions {
                         
