@@ -23,14 +23,14 @@ class AnalyticsInteractor: AnalyticsInteractorType {
     
     func getAnalyticsData(month: String, year: String, type: CategoryType) {
         
-        // Получаем все транзакции
+        // get all transactions
         let allTransaction = coreDataManager.getAllTransactions()
         
         switch allTransaction {
             
         case .success(let allTransactions):
             
-            // Сохраняем все транзакции с выбранным типом в массив и все транзакции по расходам, а так же все транзакции по доходам
+            // save all transaction with selected type in array, also save expense and income transaction in current month
             var currentMonthTransactions = [Transaction]()
             var currentMonthExpenseTransactions = [Transaction]()
             var currentMonthIncomeTransactions = [Transaction]()
@@ -80,9 +80,9 @@ class AnalyticsInteractor: AnalyticsInteractorType {
                 
             }
             
-            // На данном этапе у нас есть массив транзакций в текущем месяце и массив транзакций с расходами, а так же массив с доходами
+            // Now we have all transaction, also all expense and income transactions
             
-            // Получаем массив, айдишников категорий, которые были использованы в текущем месяце
+            // get all categoryID from transactions
             
             var categoriesID = [String]()
             
@@ -99,28 +99,28 @@ class AnalyticsInteractor: AnalyticsInteractorType {
                 
             }
             
-            // Теперь убираем повторяющиеся элементы в массиве айдишников
+            // delete equal elements
             
             let categoriesIDWithoutRepeatingElements = Array(Set(categoriesID))
             
-            // Теперь проходимся по новому массиву айдишников, и собираем данные в модель
+            // now create analytics data models in cycle
             
             var analyticsDataModels = [MainAnalyticsDataModel]()
             
             for caregoryID in categoriesIDWithoutRepeatingElements {
                 
-                // создаем переменную общего расхода по категории
+                // totalExpenses for selected category
                 
                 var totalExpenses: Decimal = 0
                 
-                // Проходимся по массиву транзакций месяца, сохраняем расходы у всех транзакций с текущим айди категории
+                // calculate amount for all transaction with selected categoryID
                 for transaction in currentMonthTransactions where transaction.categoryID! == caregoryID {
                     
                     totalExpenses += transaction.amount! as Decimal
                     
                 }
                 
-                // получаем текущую категорию по айди
+                // and get current category by ID
                 let currentCategory = getCategoryFromID(id: caregoryID)
                 
                 guard let currentCategory = currentCategory else {
@@ -131,19 +131,19 @@ class AnalyticsInteractor: AnalyticsInteractorType {
                     
                 }
 
-                // создаем модель данных и добавляем ее в общий массив
+                // create dataModel and append it in main dataModels array
                 analyticsDataModels.append(MainAnalyticsDataModel(category: currentCategory, amount: totalExpenses))
                 
             }
             
-            // Сохраняем общие расходы/доходы за месяц в переменную
+            // save all expenses or incomes
             var totalExpensesOrIncomes: Decimal = 0
             
             for dataModel in analyticsDataModels {
                 totalExpensesOrIncomes += dataModel.amount
             }
             
-            // Теперь получаем данные по всем расходам и бюджетам
+            // get all expenses and budgets
             
             let userBudgets = coreDataManager.getUserBudgetUnits()
             
@@ -151,7 +151,7 @@ class AnalyticsInteractor: AnalyticsInteractorType {
                 
             case .success(let userBudgets):
                 
-                // Складываем все бюджеты для получения общего бюджета
+                // get total budget
                 
                 var totalBudget: Decimal = 0
                 
@@ -161,14 +161,14 @@ class AnalyticsInteractor: AnalyticsInteractorType {
                     
                 }
                 
-                // Получаем все расходы за месяц
+                // get total expenses
                 var totalExpenses: Decimal = 0
                 
                 for transaction in currentMonthExpenseTransactions {
                     totalExpenses += transaction.amount! as Decimal
                 }
                 
-                // Получаем все доходы за месяц
+                // get total incomes
                 var totalIncomes: Decimal = 0
                 
                 for transaction in currentMonthIncomeTransactions {
