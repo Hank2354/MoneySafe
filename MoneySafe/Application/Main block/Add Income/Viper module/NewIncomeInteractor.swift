@@ -135,11 +135,11 @@ class NewIncomeInteractor: NewIncomeInteractorType {
             
             guard let userIncomeCategories = userIncomeCategories else { return .failure(Errors.loadUserSettingsError) }
             
-            for userIncomeCategories in userIncomeCategories {
+            for userIncomeCategory in userIncomeCategories {
                 
                 for incomeCategory in incomeCategories {
                     
-                    if incomeCategory.categoryID == userIncomeCategories {
+                    if incomeCategory.categoryID == userIncomeCategory {
                         
                         categories.append(incomeCategory)
                         
