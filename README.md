@@ -74,6 +74,10 @@ In this block, the user can change his wallets or create new ones, also here you
 
 The project does not require additional settings to run :heavy_check_mark:
 
+MARK: The region on the device must be set to "Russia" Otherwise DecimalPad will offer to use a dot instead of a comma when entering the amount.
+
+This can cause problems. This will be fixed in the next versions.
+
 ## Presentation :iphone:
 
 Presentation video -> [On YouTube :tv:](https://www.youtube.com/watch?v=wpiecCm66Bw)
