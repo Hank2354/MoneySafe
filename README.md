@@ -9,6 +9,7 @@ Application for tracking income and expenses and analyzing expenses
     - [All transactions block](#All-transactions-block-clipboard)
     - [Settings block](#Settings-block-construction)
 - [Project Structure](#Project-Structure-bookmark_tabs)
+- [Built With](#Built-With)
 - [Getting started](#Getting-started-rocket)
 - [Presentation](#Presentation-iphone)
 
@@ -55,7 +56,7 @@ In this block, the user can change his wallets or create new ones, also here you
 
 ![Structure](https://i.imgur.com/SB3DQky.png)
 
-## Built With 🛠
+## Built With
 
 - Swift language
 - Foundation
