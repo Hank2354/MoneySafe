@@ -69,7 +69,6 @@ class AllExpensesTableViewController: UITableViewController, AllExpensesTableVie
     override func viewDidLoad()                               {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = false
         
         config()
         
@@ -77,8 +76,13 @@ class AllExpensesTableViewController: UITableViewController, AllExpensesTableVie
     
     override func viewWillAppear(_ animated: Bool)            {
         presenter?.updateData()
-        
+        self.navigationController?.navigationBar.isHidden = false
         tableView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
 }

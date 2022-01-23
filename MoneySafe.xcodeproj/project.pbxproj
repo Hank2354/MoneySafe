@@ -136,6 +136,7 @@
 		4164D2A2277C3BB5007AC780 /* NewIncomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164D2A1277C3BB5007AC780 /* NewIncomePresenter.swift */; };
 		4164D2A4277C3BBE007AC780 /* NewIncomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164D2A3277C3BBE007AC780 /* NewIncomeRouter.swift */; };
 		4164D2A6277C3E2C007AC780 /* NewIncomeUITextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4164D2A5277C3E2C007AC780 /* NewIncomeUITextFieldDelegate.swift */; };
+		41663757279D93ED00D9C32A /* Extension Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41663756279D93ED00D9C32A /* Extension Double.swift */; };
 		419D3A732780CFF20005C8C0 /* Extension Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D3A722780CFF20005C8C0 /* Extension Date.swift */; };
 		419D3A752780EDAB0005C8C0 /* Extension Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D3A742780EDAB0005C8C0 /* Extension Decimal.swift */; };
 		419D3A78278110150005C8C0 /* SettingsScreenType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 419D3A77278110150005C8C0 /* SettingsScreenType.swift */; };
@@ -355,6 +356,7 @@
 		4164D2A1277C3BB5007AC780 /* NewIncomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIncomePresenter.swift; sourceTree = "<group>"; };
 		4164D2A3277C3BBE007AC780 /* NewIncomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIncomeRouter.swift; sourceTree = "<group>"; };
 		4164D2A5277C3E2C007AC780 /* NewIncomeUITextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIncomeUITextFieldDelegate.swift; sourceTree = "<group>"; };
+		41663756279D93ED00D9C32A /* Extension Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Double.swift"; sourceTree = "<group>"; };
 		419D3A722780CFF20005C8C0 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = "<group>"; };
 		419D3A742780EDAB0005C8C0 /* Extension Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Decimal.swift"; sourceTree = "<group>"; };
 		419D3A77278110150005C8C0 /* SettingsScreenType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenType.swift; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 				4145757F276E53E4004245A1 /* Extension UIColor.swift */,
 				4164D26D277A5FBE007AC780 /* Extension CoreDataManager.swift */,
 				419D3A742780EDAB0005C8C0 /* Extension Decimal.swift */,
+				41663756279D93ED00D9C32A /* Extension Double.swift */,
 				414575CF276FA54B004245A1 /* Extension String.swift */,
 				41FA8A1F27732C100094FD33 /* Extension Array.swift */,
 				419D3A722780CFF20005C8C0 /* Extension Date.swift */,
@@ -1522,6 +1525,7 @@
 				41075996277E382F001CE139 /* AnalyticsViewControllerType.swift in Sources */,
 				410759B4277E3C09001CE139 /* AllExpensesPresenter.swift in Sources */,
 				4164D2592779BA92007AC780 /* MainInteractorType.swift in Sources */,
+				41663757279D93ED00D9C32A /* Extension Double.swift in Sources */,
 				4164D29C277C3B96007AC780 /* NewIncomeRouterType.swift in Sources */,
 				4101CC1B2774D79200983B72 /* ExpenseCategoriesRouterType.swift in Sources */,
 				41A82632277FC3B400851C59 /* AboutExpenseViewController.swift in Sources */,

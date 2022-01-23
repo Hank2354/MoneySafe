@@ -131,8 +131,16 @@ class SettingsViewController: UIViewController, SettingsViewControllerType {
  
         view.layer.addSublayer(getGradient())
         
-        navigationController?.navigationBar.isHidden = false
-        
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 }
