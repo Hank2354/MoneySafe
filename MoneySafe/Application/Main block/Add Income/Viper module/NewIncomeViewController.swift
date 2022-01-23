@@ -24,7 +24,7 @@ class NewIncomeViewController: UIViewController, NewIncomeViewControllerType {
         label.font = UIFont.boldSystemFont(ofSize: 18)
         label.numberOfLines = 1
         
-        label.text = "Новый расход"
+        label.text = "Новый доход"
         
         label.textColor = .white
         
