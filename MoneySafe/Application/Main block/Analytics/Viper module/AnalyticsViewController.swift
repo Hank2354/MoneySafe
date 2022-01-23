@@ -113,6 +113,8 @@ class AnalyticsViewController: UIViewController, AnalyticsViewControllerType {
         barChart.legend.enabled = false
         barChart.drawValueAboveBarEnabled = true
         
+        barChart.leftAxis.drawGridLinesEnabled = false
+        
         return barChart
     }()
     
@@ -234,10 +236,10 @@ class AnalyticsViewController: UIViewController, AnalyticsViewControllerType {
         
         let barSet = BarChartDataSet(entries: [
             BarChartDataEntry(x: 1,
-                              y: (barData.totalExpenses as NSDecimalNumber).doubleValue),
+                              y: (barData.totalExpenses as NSDecimalNumber).doubleValue.roundToPlaces(2)),
             
             BarChartDataEntry(x: 2,
-                              y: (barData.totalIncomes as NSDecimalNumber).doubleValue)
+                              y: (barData.totalIncomes as NSDecimalNumber).doubleValue.roundToPlaces(2))
         ])
         
         barSet.setColors(.mainRed, .mainGreen)
@@ -306,12 +308,23 @@ class AnalyticsViewController: UIViewController, AnalyticsViewControllerType {
         
         view.backgroundColor = .white
         
-        self.navigationController?.navigationBar.isHidden = false
+        title = "Аналитика"
+        
         
         
         configure()
         
         presenter?.updateCharts(type: .expense)
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
 }

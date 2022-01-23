@@ -356,6 +356,7 @@ class MainViewController: UIViewController, MainViewControllerType {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         
         setupLayout()
         
@@ -367,7 +368,14 @@ class MainViewController: UIViewController, MainViewControllerType {
         presenter?.updateData()
         self.navigationController?.navigationBar.isHidden = true
         
-        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+    }
+    
+}
+
+extension MainViewController: UIGestureRecognizerDelegate {
     
 }
